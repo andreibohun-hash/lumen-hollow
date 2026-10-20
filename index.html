@@ -22,6 +22,14 @@
 #receipt{position:absolute;left:24px;bottom:110px;opacity:0;padding:9px 13px;border:1px solid #e5be8040;border-radius:13px;background:#101923ed;pointer-events:none}
 #receipt b{font-size:18px;color:#ffe0a2;font-weight:1000}#receipt small{display:block;font-size:9px;color:#c0b3dc;letter-spacing:.5px;margin-top:1px}
 .hint{bottom:168px}
+#beacons{position:absolute;top:146px;left:23px;right:23px;display:flex;gap:7px}
+#beacons span{font-size:9px;color:#83949f;padding:5px 8px;border:1px solid #acbfb31a;border-radius:20px;background:#07131a88}
+#beacons span.lit{color:#ffe5a7;border-color:#f2cc7655;background:#54422a50}
+#city-value{display:block;margin-top:3px;font-size:9px;color:#c6b995}
+.card.victory{justify-content:flex-end;padding-bottom:26px;background:linear-gradient(180deg,#08162312 0%,transparent 40%,#0a182852 58%,#07121df5 82%);gap:8px}
+.victory .card-title{text-align:center}.victory h2{font-size:35px;margin:8px 0 5px;letter-spacing:-1px}
+.victory p{font-size:12px;color:#d1d9cf;margin:0}.victory .results{margin:15px 0 18px}
+.victory .menu-bottom{max-width:310px}.victory .subnote{margin-top:12px}
 #overlay{position:absolute;inset:0;z-index:5;pointer-events:none}#overlay[hidden]{display:none}.card{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;pointer-events:none;padding:calc(57px + env(safe-area-inset-top)) 28px calc(30px + env(safe-area-inset-bottom));background:linear-gradient(180deg,#07111ee8 0%,#07111e60 27%,transparent 48%,#07111ed9 76%,#07111e 100%)}.brand{text-align:center}.brand .eyebrow{color:var(--gold);font-size:9px;letter-spacing:4px}.brand h1{font-weight:1000;line-height:.88;font-size:65px;letter-spacing:-4px;margin:20px 0 18px;color:#f7f0d9}.brand h1 span{font-weight:300;letter-spacing:9px;font-size:40px;padding-left:8px}.brand p{font-size:12px;color:#b0c4ca;line-height:1.7;margin:0}.brand-mark{margin:0 auto 17px;width:21px;height:21px;border-radius:50%;background:var(--gold);box-shadow:0 0 30px #ffcd7555;position:relative}.brand-mark:after{content:'';position:absolute;width:19px;height:19px;border-radius:50%;background:#0b1623;left:6px;top:-3px}.menu-bottom{width:100%;text-align:center}.steps{display:flex;justify-content:center;gap:14px;align-items:center;font-size:11px;color:#adc3c7;margin-bottom:22px}.steps i{font-style:normal;color:#53727f}.steps b{font-size:13px;display:block;color:var(--gold);font-weight:400;margin-bottom:6px}.primary{pointer-events:auto;width:100%;border-radius:17px;background:#f6dcaa;color:#17202a;min-height:59px;padding:16px;font-size:14px;font-weight:1000;letter-spacing:.3px;box-shadow:0 5px 28px #e8b26518}.primary .arrow{float:right;margin-right:7px;font-size:19px;line-height:20px}.subnote{font-size:9px;letter-spacing:1.6px;color:#6e8997;margin-top:18px;text-transform:uppercase}.secondary{pointer-events:auto;background:transparent;border:1px solid #b1c9c729;border-radius:14px;padding:13px;width:100%;font-size:12px;font-weight:800;margin-top:10px}.dialog{justify-content:center;background:#07111ecc;gap:25px}.dialog h2{font-size:36px;margin:0 0 7px;letter-spacing:-1px}.dialog p{font-size:13px;color:#a8bdc6;line-height:1.6;margin:0}.dialog .card-title{text-align:center}.dialog .menu-bottom{max-width:290px}.victory-mark{font-size:46px;color:var(--gold);margin-bottom:18px}.results{display:flex;gap:30px;justify-content:center;margin:25px 0}.results b{display:block;font-size:25px;color:var(--gold)}.results span{font-size:10px;color:#9db1b9}
 #joy{position:absolute;width:92px;height:92px;border-radius:50%;border:1px solid #ffe0a84d;background:#15223066;display:none;pointer-events:none;z-index:4}#joy-knob{position:absolute;left:30px;top:30px;width:30px;height:30px;border-radius:50%;background:#ffe1a366;border:1px solid #ffedc0aa}#debug{position:absolute;top:140px;left:12px;right:12px;padding:14px;background:#091422f5;border:1px solid #6f969a;border-radius:14px;z-index:20;font-size:11px;display:none;pointer-events:auto}#debug.open{display:block}#debug label{display:flex;justify-content:space-between;align-items:center;margin:8px 0}#debug button{background:#223c47;border-radius:6px;padding:6px 10px;margin:3px}#debug input{max-width:140px}#debug pre{white-space:pre-wrap;color:#b7cecc;font-size:9px}#error{position:absolute;inset:0;z-index:40;background:#111f30;padding:40px;display:none;place-content:center;font-size:15px}.desktop-caption{position:fixed;bottom:22px;left:27px;color:#3c5264;font-size:10px;letter-spacing:3px;pointer-events:none}.desktop-caption b{color:#60788a;font-weight:700}
 @media(min-width:600px){#frame{height:calc(100dvh - 36px);border-radius:30px;box-shadow:0 0 0 1px #2e435348,0 30px 120px #0007}body{background:radial-gradient(ellipse at 50% 35%,#1a2b38 0,#090f1a 62%)}}@media(max-height:720px){.card{padding-top:30px}.brand h1{font-size:52px;margin:13px 0}.brand h1 span{font-size:33px}.brand-mark{margin-bottom:10px}.steps{margin-bottom:14px}.subnote{margin-top:11px}.primary{min-height:52px}.topbar{top:15px}#quest{top:76px}#counter{top:82px}}
@@ -35,8 +43,9 @@
 <div id="stage" aria-label="Игровое поле. Двигайте свет пальцем или клавишами WASD."></div><div class="vignette"></div>
 <header id="hud" class="hidden">
 <div class="topbar"><div><div class="eyebrow">Глава 01 · Ночь</div><div class="location">Спящий квартал</div></div><div class="actions"><button class="iconbtn" id="sound" aria-label="Выключить звук"></button><button class="iconbtn" id="pause" aria-label="Пауза"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button></div></div>
-<div id="quest"><div class="quest-icon"><svg viewBox="0 0 24 30"><path d="M6 28V12h12v16M4 28h16M5 12l7-9 7 9M12 0v3M9 17h6M12 14v5M10 28v-5h4v5"/></svg></div><div><div class="quest-title">Пробуди часовую башню</div><div class="quest-sub" id="quest-sub">Очищай квартал на пути к площади</div></div></div>
-<div id="counter"><b id="cleansed">0</b> очищено</div>
+<div id="quest"><div class="quest-icon"><svg viewBox="0 0 24 30"><path d="M6 28V12h12v16M4 28h16M5 12l7-9 7 9M12 0v3M9 17h6M12 14v5M10 28v-5h4v5"/></svg></div><div><div class="quest-title" id="quest-title">Зажги три фонаря</div><div class="quest-sub" id="quest-sub">Начни с сада фонарей</div></div></div>
+<div id="counter"><b id="cleansed">0</b> очищено<span id="city-value">Город спит</span></div>
+<div id="beacons"><span id="beacon-0">◇ Сад</span><span id="beacon-1">◇ Кафе</span><span id="beacon-2">◇ Площадь</span></div>
 <div class="hint" id="hint"><span>Накрой предмет светом целиком · веди пальцем</span></div>
 <div id="receipt" role="status"><b id="receipt-value"></b><small>Мир становится светлее</small></div>
 <footer id="bottom"><div class="growth-head"><div class="growth-name" id="growth-name">Маленькая искра</div><div class="growth-value" id="growth-value">×1.0</div></div><div class="growth-track"><div class="growth-fill" id="growth-fill"></div></div><div id="next-label"><span id="next-text">Дальше — деревья</span><span id="progress-text">0%</span></div></footer>
@@ -80086,18 +80095,27 @@ const CFG = {
   worldH: 1600, // Length of the fixed virtual world.
   seed: 81021, // Reproducible seed of level one.
   startRadius: 34, // Initial light radius in world units.
-  energyArea: 118, // Squared-radius gain per cleansed energy unit.
+  energyArea: 142, // Strong early growth, opening a new object size every few gifts.
   maxRadius: 270, // Maximum usable light radius.
   playerSize: 8, // Edge padding for the light spirit.
   speed: 112, // Movement speed in world units per second.
   growthSpeed: 0.20, // Additional speed per unit of light radius.
   captureMs: 165, // Base continuous exposure before cleansing.
   captureSizeMs: 1.6, // Exposure milliseconds per unit of object radius.
-  cleanseFxMs: 1750, // Outgoing light flight, spatial reveal and fading stardust.
+  cleanseFxMs: 2100, // Outgoing light flight, spatial reveal and fading stardust.
   activationMs: 580, // Flight duration from the launch point to the dark object.
   receiptMs: 1000, // Growth acknowledgment after light has reached the object.
-  restorationMs: 800, // Time for the light wave to dissolve the object's haze.
-  activationPulseMs: 800, // Soft bloom at the target after the spark lands.
+  restorationMs: 950, // A readable golden reveal followed by a soft settling motion.
+  activationPulseMs: 1100, // Warm bloom, elastic response and trailing sparks.
+  restoreLift: 5, // Maximum small-object lift during the restoration response.
+  cityAmbient: 0.19, // Ground illumination gained as the sleeping town awakens.
+  cityEnergy: 650, // Activated energy needed for full pre-dawn warmth.
+  beaconWarmth: 270, // Persistent warm pool around a lit district lantern.
+  restoredGlow: 0.055, // Very subtle, permanent golden bloom from restored silhouettes.
+  restoredGlowPx: 4.2, // Soft halo width in CSS pixels, independent of camera zoom.
+  restoredGlowResolution: 0.5, // Half-size bloom buffers keep the mobile render inexpensive.
+  victoryCameraWidth: 1380, // Final postcard view of the complete quarter.
+  victoryParticles: 150, // Seeded golden fireflies in the finale.
   captionDelayMs: 220, // Let the light impact read before the floating words appear.
   captionMs: 1650, // Absolute lifetime of the warm, fading restoration caption.
   captionRisePx: 34, // Upward travel in CSS pixels, independent of the camera zoom.
@@ -80109,7 +80127,7 @@ const CFG = {
   darknessVeins: 0.032, // Subtle violet haze on nearby dark silhouette surfaces.
   darknessFog: 0.48, // Maximum opacity of layered near-object mist.
   warmthResolution: 384, // Width of the persistent world-space ground light texture.
-  warmthRadius: 1.45, // Warm ground radius relative to the restored object footprint.
+  warmthRadius: 2.15, // Warm ground patches overlap into a living neighborhood.
   lightThreads: 2, // Warm outer glow and fine core of the outgoing light trail.
   ribbonSegments: 24, // Samples along each curved light trail.
   lightArc: 24, // Minimum height of a light-flight arc.
@@ -80119,10 +80137,10 @@ const CFG = {
   lightSway: 3.0, // Local light-source sway in world units.
   fixedStep: 1 / 120, // Fixed motion integration step.
   maxSteps: 24, // Spiral-of-death guard for delayed frames.
-  victoryMs: 2600, // Dawn sequence before victory UI.
+  victoryMs: 5400, // Let the tower, wave and city panorama breathe before results.
   worldMargin: 28, // Visual border padding.
-  cameraWidth: 330, // Virtual camera width at the start.
-  cameraGrowth: 2.1, // Camera width growth per additional radius unit.
+  cameraWidth: 310, // Virtual camera width at the start.
+  cameraGrowth: 1.12, // Slower zoom-out makes the growing pool visibly expand.
   lightHeight: 48, // Point-light height above the ground.
   shadowSize: 512, // Point-light cubemap resolution.
   nightVisibility: 0.009, // Residual surface brightness outside the light (dense night).
@@ -80133,7 +80151,7 @@ const CFG = {
   silhouetteBlurPx: 0.85, // Soft edges with readable crowns, roofs and car bodies.
   silhouetteResolution: 0.5, // Half-CSS-resolution silhouette buffers for mobile.
   lightInnerEdge: 0.64, // Start of the soft shader penumbra, relative to radius.
-  lightOuterEdge: 1.13, // End of the penumbra; the thin capture ring stays at 1.0.
+  lightOuterEdge: 1.28, // Broad soft spill; the honest capture ring stays at 1.0.
   nightAmbient: 0.46, // Hemisphere light before the radial darkness mask.
   nightMoon: 0.42, // Dim blue fill before the radial darkness mask.
   nightPointPower: 165, // Warm local source intensity before growth.
@@ -80153,9 +80171,15 @@ const ART = {
   shop:{name:'Кафе',bound:89,value:26,color:0x81aaa5,height:94,footprint:[[-64,-52],[64,-52],[64,52],[54,70],[-54,70],[-64,52]]},
   house:{name:'Дом',bound:107,value:40,color:0x8298b7,height:128,footprint:[[-82,-68],[82,-68],[82,68],[-82,68]]},
   villa:{name:'Особняк',bound:136,value:62,color:0x9b9fbd,height:156,footprint:[[-105,-85],[105,-85],[105,85],[-105,85]]},
+  beacon:{name:'Фонарь квартала',bound:62,value:35,color:0xe6b66e,height:121},
   tower:{name:'Часовая башня',bound:207,value:160,color:0xa8bbb9,height:291},
 };
 const LEVELS = [{n:1,name:'Спящий квартал',spawn:{x:560,z:1390},tower:{x:560,z:270}}];
+const DISTRICTS=[
+  {name:'Сад фонарей',short:'Сад',x:285,z:1200,color:0x426b59},
+  {name:'Дворик кафе',short:'Кафе',x:830,z:835,color:0x68614c},
+  {name:'Лунная площадь',short:'Площадь',x:400,z:470,color:0x456c73},
+];
 function mulberry32(a){return function(){let t=a+=0x6D2B79F5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296;};}
 function radiusFor(energy){return Math.min(CFG.maxRadius,Math.sqrt(CFG.startRadius**2+Math.max(0,energy)*CFG.energyArea));}
 function createState(){
@@ -80163,17 +80187,24 @@ function createState(){
   const add=(type,x,z,rotation=0)=>objects.push({id:objects.length,type,x,z,rotation,...ART[type],status:'dark',since:null,cleansedAt:null});
   // Authored landmarks, streets and gardens; seeded small objects fill explicit clusters.
   const landmarks=[
-    ['shop',290,1260,0],['shop',820,1250,0],['house',260,960,0],['house',860,930,0],
-    ['house',265,655,0],['house',865,635,0],['villa',250,300,0],['villa',870,310,0],
+    ['shop',185,1030,.12],['shop',875,1080,-.12],['house',220,830,0],['house',870,615,0],
+    ['house',225,650,0],['house',825,410,0],['villa',190,250,0],['villa',900,220,0],
     ['car',460,1140,0],['car',675,1080,0],['car',440,820,0],['car',675,745,0],['car',480,520,0],['car',670,490,0],
     ['tree',390,1350,0],['tree',730,1360,0],['tree',410,995,0],['tree',740,970,0],
     ['tree',390,685,0],['tree',740,650,0],['tree',360,480,0],['tree',760,470,0],
-    ['tree',120,1150,0],['tree',995,1155,0],['tree',120,780,0],['tree',990,780,0],
+    ['tree',145,1275,0],['tree',1010,1010,0],['tree',100,980,0],['tree',990,800,0],
     ['bench',460,1270,0],['bench',660,1245,0],['bench',535,1010,Math.PI/2],['bench',580,640,0],
     ['bench',440,425,0],['bench',685,420,0],['tower',560,235,0],
   ];
   landmarks.forEach(o=>add(...o));
-  const clusters=[{x:560,z:1305,n:12},{x:540,z:1170,n:12},{x:600,z:970,n:10},{x:555,z:800,n:10},{x:560,z:575,n:10},{x:200,z:1385,n:8},{x:900,z:1380,n:8}];
+  for(const district of DISTRICTS){
+    add('beacon',district.x,district.z);
+    objects.at(-1).district=district.name;
+    for(let i=0;i<5;i++){const a=i*Math.PI*.4;add('pot',district.x+Math.cos(a)*98,district.z+Math.sin(a)*98,a);}
+    add('bench',district.x-105,district.z-65,Math.PI/2);
+  }
+  // Small gifts lead into side gardens, then across the café court to the plaza.
+  const clusters=[{x:560,z:1305,n:12},{x:430,z:1230,n:9},{x:315,z:1330,n:8},{x:500,z:1080,n:9},{x:650,z:940,n:9},{x:850,z:960,n:8},{x:665,z:720,n:9},{x:520,z:550,n:9}];
   for(const c of clusters) for(let i=0;i<c.n;i++){
     const a=i/c.n*Math.PI*2+random()*.28,r=38+random()*36;
     let x=c.x+Math.cos(a)*r,z=c.z+Math.sin(a)*r;
@@ -80189,7 +80220,8 @@ function containment(s,o){
     for(const [x,z]of o.footprint)farthest=Math.max(farthest,Math.hypot(o.x+x*c+z*sn-s.player.x,o.z-x*sn+z*c-s.player.z));
   }
   const remaining=s.radius-farthest;
-  return {distance,remaining,full:remaining>=0,possible:o.bound<=s.radius,visible:distance-o.bound<s.radius};
+  const unlocked=o.type!=='tower'||!s.objects.some(a=>a.type==='beacon'&&a.status!=='cleansed');
+  return {distance,remaining,full:remaining>=0&&unlocked,possible:o.bound<=s.radius&&unlocked,visible:distance-o.bound<s.radius,unlocked};
 }
 function movePlayer(s,input,dt){
   if(s.status!=='playing')return;
@@ -80213,7 +80245,7 @@ function updateState(s,now){
 }
 function botInput(s){
   let best=null,score=Infinity;
-  for(const o of s.objects){if(o.status!=='dark'||o.bound>s.radius-1)continue;
+  for(const o of s.objects){if(o.status!=='dark'||o.bound>s.radius-1||!containment(s,o).unlocked)continue;
     const d=Math.hypot(o.x-s.player.x,o.z-s.player.z),v=d/(o.value**.18);
     if(v<score){score=v;best=o;}}
   if(!best)return {x:0,z:0};
@@ -80249,16 +80281,17 @@ let toastUntil=0,lastStage=0,lastUI=0,lastInputAt=-10000,camX=state.player.x,cam
 const input={id:null,x:0,z:0,startX:0,startY:0,lastX:0,lastY:0,drag:false,target:null,keys:new Set()};
 const modelMap=new Map(),effects=[],ripples=[],lightCaptions=[];
 const feedback={at:-10000,value:0,activatedAt:-10000,launchedAt:-10000,object:null};
-let renderer,scene,camera,light,moon,ambient,spirit,halo,field,fieldEdge,stars,ground,skyDawn,nightPass,warmthMap,captionPass;
-const uniforms={lightCenter:{value:new T.Vector2(state.player.x,state.player.z)},lightRadius:{value:state.radius},time:{value:0},reveal:{value:0},dawn:{value:0},flicker:{value:1},warmthMap:{value:null}};
+let renderer,scene,camera,light,moon,ambient,spirit,halo,field,fieldEdge,stars,ground,skyDawn,nightPass,warmthMap,captionPass,celebration;
+const uniforms={lightCenter:{value:new T.Vector2(state.player.x,state.player.z)},lightRadius:{value:state.radius},time:{value:0},reveal:{value:0},dawn:{value:0},city:{value:0},glowPass:{value:0},dawnOrigin:{value:new T.Vector2(560,235)},flicker:{value:1},warmthMap:{value:null}};
 const materials=new Map();
 // ART MATERIAL: dense, world-space night, softly moving penumbra and object readiness.
 // Every object shares one readiness uniform across its material clones; ground uses 1.
 const NIGHT_GLSL = `
   uniform vec2 uCenter;
+  uniform vec2 uDawnOrigin;
   uniform vec3 uCleanseOrigin;
   uniform float uCleanseExtent;
-  uniform float uRadius, uReveal, uDawn, uTime, uReady, uObject, uRestored, uFlicker, uWake;
+  uniform float uRadius, uReveal, uDawn, uCity, uTime, uReady, uObject, uRestored, uFlicker, uWake;
   uniform sampler2D uWarmthMap;
   uniform vec2 uWorldSize;
   uniform float uNight, uInnerEdge, uOuterEdge;
@@ -80281,11 +80314,18 @@ const NIGHT_GLSL = `
     float front=mix(-.18,1.28,uRestored);
     return 1.-smoothstep(front-.11,front+.11,d);
   }
+  float lumenDawn(vec3 world) {
+    if(uDawn<=0.)return 0.;
+    if(uDawn>=.999)return 1.;
+    float front=mix(-180.,2200.,uDawn);
+    return 1.-smoothstep(front-140.,front+140.,distance(world.xz,uDawnOrigin));
+  }
 `;
 function installNightShader(shader) {
   Object.assign(shader.uniforms, {
     uCenter: uniforms.lightCenter, uRadius: uniforms.lightRadius,
     uReveal: uniforms.reveal, uDawn: uniforms.dawn, uTime: uniforms.time,
+    uCity: uniforms.city, uDawnOrigin: uniforms.dawnOrigin,
     uReady: this.userData.lightReady,
     uRestored: this.userData.restored || {value:0},
     uWake: this.userData.wake || {value:0},
@@ -80314,13 +80354,14 @@ function installNightShader(shader) {
     float inMap=step(0.,mapUV.x)*step(0.,mapUV.y)*step(mapUV.x,1.)*step(mapUV.y,1.);
     float warmGround=texture2D(uWarmthMap,mapUV).r*inMap;
     float unveiled=uObject>.5?lumenUnveil(vWorld):0.;
-    float ready = max(max(clamp(uReady, 0.0, 1.0),unveiled), max(uReveal, uDawn));
+    float localDawn=lumenDawn(vWorld);
+    float ready = max(max(clamp(uReady, 0.0, 1.0),unveiled), max(uReveal, localDawn));
     // Incomplete objects are drawn by the blurred silhouette pass, without surface detail.
     if (uObject > .5) {
       if (ready < .001) discard;
       diffuseColor.a *= ready;
     }
-    float illumination=max(pool*uFlicker,warmGround*.75);
+    float illumination=max(max(pool*uFlicker,warmGround*.94),uCity*${CFG.cityAmbient});
     float litStrength = mix(uNight, 1.0, illumination);
     vec3 warmSurface = outgoingLight * mix(vec3(.59, .72, .90), vec3(1.18, .94, .66), max(pool,warmGround));
     // Surface highlights belong only to the revealed model.
@@ -80330,17 +80371,19 @@ function installNightShader(shader) {
     nightSurface += diffuseColor.rgb * edgeColor * rim * pool * .075;
     // No emissive windows or moonlit roofs are allowed to reveal the distant map.
     float veil = 1.0 - smoothstep(uOuterEdge, 1.42, distanceRatio);
-    nightSurface *= mix(.24, 1.0, max(veil,warmGround));
+    nightSurface *= mix(.24, 1.0, max(max(veil,warmGround),uCity*.85));
     nightSurface += (diffuseColor.rgb*vec3(.14,.075,.025)+vec3(.032,.017,.005))*warmGround;
     // Restored objects retain color and warm windows even far behind the player.
     vec3 restoredSurface=outgoingLight*vec3(1.15,.98,.79);
     restoredSurface+=diffuseColor.rgb*vec3(.16,.10,.045);
+    restoredSurface+=vec3(1.,.64,.26)*rim*${CFG.restoredGlow};
     restoredSurface+=totalEmissiveRadiance*1.35;
     restoredSurface*=.97+.03*sin(uTime*1.7+vWorld.x*.009);
     nightSurface=mix(nightSurface,restoredSurface,unveiled);
     float revealEdge=4.*unveiled*(1.-unveiled);
-    nightSurface+=vec3(.9,.51,.18)*(uWake*(.2+.5*rim)*unveiled+revealEdge*.28);
-    outgoingLight = mix(nightSurface, outgoingLight, max(uReveal, uDawn));
+    nightSurface+=vec3(.9,.51,.18)*(uWake*(.28+.6*rim)*unveiled+revealEdge*.7);
+    nightSurface+=vec3(.23,.105,.025)*4.*localDawn*(1.-localDawn);
+    outgoingLight = mix(nightSurface, outgoingLight, max(uReveal, localDawn));
     #include <opaque_fragment>
   `);
 }
@@ -80350,7 +80393,7 @@ function mat(color,options={}) {
   const m=new T.MeshStandardMaterial({color,roughness:.73,metalness:.09,...options});
   m.userData.lightReady={value:1};
   m.onBeforeCompile=installNightShader;
-  m.customProgramCacheKey=()=> 'lumenGivingLightV7';
+  m.customProgramCacheKey=()=> 'lumenLivingCityV9';
   materials.set(key,m);
   return m;
 }
@@ -80361,6 +80404,15 @@ function cyl(parent,r1,r2,h,color,x=0,y=0,z=0,n=16,opts={}){return mesh(new T.Cy
 function makeStone(g,o){const m=mesh(new T.DodecahedronGeometry(9,0),mat(o.color),g,0,7,0);m.scale.set(1,.7,.88);m.rotation.y=o.rotation;}
 function makePot(g,o){cyl(g,11,8,13,0xb58265,0,6.5,0,8);cyl(g,12,12,3,0xe3b287,0,13,0,8);cyl(g,10,10,1,0x3b4b40,0,15,0,8);for(let i=0;i<4;i++){const a=i*Math.PI/2;const m=mesh(new T.IcosahedronGeometry(6,0),mat(i%2?0xc5b783:0x8da98a),g,Math.cos(a)*6,18+2*(i%2),Math.sin(a)*6);m.scale.y=.8;}}
 function makeBench(g,o){box(g,47,5,14,0xbca085,0,14,0);box(g,47,13,3,0x8b8780,0,23,-6);for(const x of [-17,17]){box(g,3,14,12,0x304856,x,7,0);}for(const x of [-13,0,13])box(g,1,1,14,0x6b716d,x,17,0);}
+// ART DISTRICT LANTERN: a garden dais, tapered brass post and faceted glass crown.
+function makeBeacon(g,o){
+  cyl(g,60,62,5,0x607d79,0,2.5,0,32);cyl(g,48,54,5,0xbda275,0,7,0,24);
+  cyl(g,17,25,10,0x5a6b66,0,14,0,8);cyl(g,6,11,53,0xb7955f,0,44,0,8);
+  cyl(g,23,15,8,0x5b6c66,0,74,0,8);
+  mesh(new T.IcosahedronGeometry(22,1),mat(0xffdf9b,{emissive:0xffba57,emissiveIntensity:1.4}),g,0,95,0);
+  cyl(g,0,28,17,0xc9a263,0,119,0,8);
+  for(let i=0;i<4;i++){const a=i*Math.PI/2;box(g,3,32,3,0x927d55,Math.cos(a)*19,96,Math.sin(a)*19);}
+}
 function makeTree(g,o){cyl(g,5,7,38,0x8b7969,0,19,0,7);const b=mesh(new T.IcosahedronGeometry(42,1),mat(o.color),g,0,48,0);b.scale.y=.85;b.rotation.y=o.rotation;const c=mesh(new T.IcosahedronGeometry(25,0),mat(0x719b89),g,-9,67,-4);c.scale.y=.65;}
 function makeCar(g,o){box(g,39,16,91,o.color,0,13,0);box(g,34,15,46,o.color,0,27,-5);box(g,29,11,2,0x344f62,0,28,19,{metalness:.45,roughness:.25});box(g,29,10,2,0x344f62,0,28,-29);box(g,40,5,8,0xd6b79a,0,7,42);box(g,40,5,8,0x748e99,0,7,-42);for(const x of [-20,20])for(const z of [-29,29]){const w=cyl(g,8,8,5,0x172b38,x,8,z,12);w.rotation.z=Math.PI/2;}for(const x of [-12,12])box(g,8,4,2,0xffdea1,x,16,46,{emissive:0xffbc65,emissiveIntensity:.35});}
 function windowGrid(g,width,height,depth,rows,cols){
@@ -80423,10 +80475,10 @@ function captureMaterial(){
 function makeDarknessFog(o,restored){
   const material=new T.ShaderMaterial({
     transparent:true,depthWrite:false,side:T.DoubleSide,
-    uniforms:{uTime:uniforms.time,uRestored:restored,uNear:{value:0},uDawn:uniforms.dawn,uReveal:uniforms.reveal,uSeed:{value:o.id*.73},uOpacity:{value:CFG.darknessFog}},
+    uniforms:{uTime:uniforms.time,uRestored:restored,uNear:{value:0},uDawn:uniforms.dawn,uDawnOrigin:uniforms.dawnOrigin,uOrigin:{value:new T.Vector3(o.x,0,o.z)},uReveal:uniforms.reveal,uSeed:{value:o.id*.73},uOpacity:{value:CFG.darknessFog}},
     vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
     fragmentShader:NIGHT_GLSL+`
-      varying vec2 vUv;uniform float uNear,uSeed,uOpacity;
+      varying vec2 vUv;uniform float uNear,uSeed,uOpacity;uniform vec3 uOrigin;
       void main(){
         vec2 p=(vUv-.5)*2.;float r=length(p);
         vec2 drift=vec2(uTime*.075+uSeed,-uTime*.052);
@@ -80436,7 +80488,7 @@ function makeDarknessFog(o,restored){
         float edge=1.-smoothstep(.35,.98,r+(density-.5)*.28);
         float cleared=1.-smoothstep(uRestored*1.4-.23,uRestored*1.4+.01,r+(large-.5)*.14);
         vec3 dark=mix(vec3(.009,.012,.027),vec3(.095,.075,.17),density);
-        float presence=(1.-cleared)*(1.-max(uDawn,uReveal));
+        float presence=(1.-cleared)*(1.-max(lumenDawn(uOrigin),uReveal));
         float rim=4.*cleared*(1.-cleared)*sin(uRestored*3.14159);
         gl_FragColor=vec4(dark+vec3(.24,.16,.065)*rim,edge*uNear*uOpacity*presence);
       }`,
@@ -80445,7 +80497,7 @@ function makeDarknessFog(o,restored){
   fog.rotation.x=-Math.PI/2;fog.position.set(o.x,1.45,o.z);
   fog.scale.setScalar(o.bound*2.8+13);scene.add(fog);return fog;
 }
-function makeModel(o){const g=new T.Group();g.position.set(o.x,0,o.z);g.rotation.y=o.rotation;scene.add(g);({stone:makeStone,pot:makePot,bench:makeBench,tree:makeTree,car:makeCar,shop:makeBuilding,house:makeBuilding,villa:makeBuilding,tower:makeTower})[o.type](g,o);
+function makeModel(o){const g=new T.Group();g.position.set(o.x,0,o.z);g.rotation.y=o.rotation;scene.add(g);({stone:makeStone,pot:makePot,bench:makeBench,tree:makeTree,car:makeCar,shop:makeBuilding,house:makeBuilding,villa:makeBuilding,tower:makeTower,beacon:makeBeacon})[o.type](g,o);
   const ready={value:0},restored={value:0},wake={value:0};
   const cleanseOrigin={value:new T.Vector3(o.x,impactHeight(o),o.z)};
   const cleanseExtent={value:Math.hypot(o.bound,o.height*.72)+12};
@@ -80472,7 +80524,13 @@ function updateRestoredModel(m,o,now){
   const age=o.status==='cleansed'?now-o.cleansedAt-CFG.activationMs:-1;
   const p=Math.max(0,Math.min(1,age/CFG.restorationMs));
   m.restored.value=p*p*(3-2*p);
-  m.wake.value=age>=0&&age<CFG.activationPulseMs?Math.sin(age/CFG.activationPulseMs*Math.PI)*(reduced?.16:.38):0;
+  m.wake.value=age>=0&&age<CFG.activationPulseMs?Math.sin(age/CFG.activationPulseMs*Math.PI)*(reduced?.16:.6):0;
+  if(!reduced&&age>=0&&age<CFG.activationPulseMs){
+    const q=age/CFG.activationPulseMs,bloom=Math.sin(q*Math.PI),settle=Math.sin(q*Math.PI*2)*bloom;
+    const strength=o.bound>80?.025:.075;
+    m.group.scale.set(1-settle*strength*.45,1+settle*strength,1-settle*strength*.45);
+    m.group.position.y=bloom*bloom*Math.min(CFG.restoreLift,CFG.restoreLift*30/o.bound);
+  }
   const near=1-Math.min(1,Math.max(0,(Math.hypot(o.x-state.player.x,o.z-state.player.z)-o.bound-state.radius*.55)/(state.radius*.9)));
   m.fog.material.uniforms.uNear.value=near;
   m.fog.visible=near>.01&&p<1&&!reveal&&uniforms.dawn.value<1;
@@ -80502,10 +80560,10 @@ function clearWarmthMap(){
 function paintWarmth(o){
   if(!warmthMap)return;
   const {context:c,canvas,texture}=warmthMap,k=canvas.width/CFG.worldW;
-  const x=o.x*k,y=o.z*k,r=(o.bound*CFG.warmthRadius+24)*k;
+  const x=o.x*k,y=o.z*k,r=(o.type==='beacon'?CFG.beaconWarmth:o.bound*CFG.warmthRadius+34)*k;
   const gradient=c.createRadialGradient(x,y,0,x,y,r);
   gradient.addColorStop(0,'rgba(255,255,255,.82)');
-  gradient.addColorStop(.4,'rgba(255,255,255,.46)');
+  gradient.addColorStop(.45,'rgba(255,255,255,.57)');
   gradient.addColorStop(1,'rgba(255,255,255,0)');
   c.globalCompositeOperation='lighter';c.fillStyle=gradient;c.fillRect(x-r,y-r,r*2,r*2);
   texture.needsUpdate=true;
@@ -80533,7 +80591,7 @@ function makeSilhouette(group,restored,o,cleanseOrigin,cleanseExtent){
   geometry.setAttribute('normal',new T.Float32BufferAttribute(normals,3));
   const material=new T.ShaderMaterial({
     uniforms:{uRestored:restored,uCleanseOrigin:cleanseOrigin,uCleanseExtent:cleanseExtent,uCenter:uniforms.lightCenter,uRadius:uniforms.lightRadius,
-      uDawn:uniforms.dawn,uReveal:uniforms.reveal,uTime:uniforms.time,
+      uDawn:uniforms.dawn,uDawnOrigin:uniforms.dawnOrigin,uCity:uniforms.city,uReveal:uniforms.reveal,uTime:uniforms.time,uGlowPass:uniforms.glowPass,
       uBrightness:{value:CFG.silhouetteBrightness},uNearBoost:{value:CFG.silhouetteNearBoost},
       uRimStrength:{value:CFG.silhouetteRim},uVeins:{value:CFG.darknessVeins}},
     vertexShader:`varying vec3 vWorld,vNormal,vEye;void main(){
@@ -80544,14 +80602,19 @@ function makeSilhouette(group,restored,o,cleanseOrigin,cleanseExtent){
     }`,
     fragmentShader:NIGHT_GLSL+`
       varying vec3 vNormal,vEye;
-      uniform float uBrightness,uNearBoost,uRimStrength,uVeins;
+      uniform float uBrightness,uNearBoost,uRimStrength,uVeins,uGlowPass;
       void main(){
         float spill=1.-smoothstep(.55,1.55,distance(vWorld.xz,uCenter)/max(uRadius,1.));
         float unveiled=lumenUnveil(vWorld);
-        float presence=(1.-unveiled)*(1.-max(uDawn,uReveal));
+        float presence=(1.-unveiled)*(1.-max(lumenDawn(vWorld),uReveal));
         vec3 n=normalize(vNormal);
         float moonFace=max(0.,dot(n,normalize(vec3(-.65,.8,.25))));
         float rim=pow(1.-abs(dot(n,normalize(vEye))),2.4);
+        if(uGlowPass>.5){
+          // Reuse the actual outline: the halo follows roofs, leaves and stones.
+          gl_FragColor=vec4(vec3(1.,.65,.28)*${CFG.restoredGlow}*(.45+.55*rim)*unveiled,1.);
+          return;
+        }
         float heightFade=smoothstep(0.,60.,vWorld.y);
         float haze=lumenNoise(vWorld.xz*.028+vec2(uTime*.025,-uTime*.018));
         vec3 tint=mix(vec3(.25,.35,.58),vec3(.42,.61,.84),heightFade);
@@ -80566,20 +80629,21 @@ function makeSilhouette(group,restored,o,cleanseOrigin,cleanseExtent){
         float mist=smoothstep(.25,.72,current);
         vec3 darkness=vec3(.42,.30,.70)*mist*spill*uVeins*(.4+.6*rim);
         vec3 gold=vec3(.34,.19,.065)*4.*unveiled*(1.-unveiled);
-        gl_FragColor=vec4((form*uBrightness+darkness+gold)*presence,1.);
+        gl_FragColor=vec4((form*uBrightness*(1.+uCity*.65)+darkness+gold)*presence,1.);
       }`,
     toneMapped:false,
   });
   const silhouette=new T.Mesh(geometry,material);
   nightPass.silhouettes.add(silhouette);return silhouette;
 }
-// Separable Gaussian blur is applied only to the flat silhouettes. The warm light,
-// the spirit, the HUD and collectible models retain their sharpness.
+// Separate soft passes preserve dark silhouettes and the faint restored-object glow.
+// Models and the HUD stay crisp; no extra light sources are added to the world.
 function createNightPass(){
   const target=()=>new T.WebGLRenderTarget(1,1,{type:T.HalfFloatType,depthBuffer:false});
   const color=target();color.depthBuffer=true;color.samples=4;
   const shapes=target();shapes.depthBuffer=true;
   const horizontal=target(),soft=target(),silhouettes=new T.Scene(),post=new T.Scene();
+  const glowShapes=target(),glowHorizontal=target(),glowSoft=target();glowShapes.depthBuffer=true;
   const postCamera=new T.OrthographicCamera(-1,1,1,-1,0,1);
   const vertex=`varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}`;
   const blur=new T.ShaderMaterial({
@@ -80594,21 +80658,22 @@ function createNightPass(){
       }`,
   });
   const composite=new T.ShaderMaterial({
-    uniforms:{uScene:{value:color.texture},uSilhouettes:{value:soft.texture}},
+    uniforms:{uScene:{value:color.texture},uSilhouettes:{value:soft.texture},uGlow:{value:glowSoft.texture}},
     vertexShader:vertex,depthTest:false,depthWrite:false,
-    fragmentShader:`varying vec2 vUv;uniform sampler2D uScene,uSilhouettes;
+    fragmentShader:`varying vec2 vUv;uniform sampler2D uScene,uSilhouettes,uGlow;
       void main(){
         vec3 base=texture2D(uScene,vUv).rgb;
         vec3 shape=texture2D(uSilhouettes,vUv).rgb;
         // Bright foreground elements stay crisp when passing a dark silhouette.
         float foreground=smoothstep(.025,.12,max(base.r,max(base.g,base.b)));
-        gl_FragColor=vec4(base+shape*(1.-foreground),1.);
+        vec3 glow=texture2D(uGlow,vUv).rgb;
+        gl_FragColor=vec4(base+shape*(1.-foreground)+glow,1.);
         #include <tonemapping_fragment>
         #include <colorspace_fragment>
       }`,
   });
   const quad=new T.Mesh(new T.PlaneGeometry(2,2),composite);quad.frustumCulled=false;post.add(quad);
-  return {color,shapes,horizontal,soft,silhouettes,post,postCamera,quad,blur,composite};
+  return {color,shapes,horizontal,soft,glowShapes,glowHorizontal,glowSoft,silhouettes,post,postCamera,quad,blur,composite};
 }
 function renderNight(){
   const p=nightPass;
@@ -80622,6 +80687,17 @@ function renderNight(){
   p.blur.uniforms.uImage.value=p.horizontal.texture;
   p.blur.uniforms.uStep.value.set(0,CFG.silhouetteBlurPx/frame.clientHeight);
   renderer.setRenderTarget(p.soft);renderer.render(p.post,p.postCamera);
+  // Low-resolution bloom is shared by every restored item and fades in with it.
+  uniforms.glowPass.value=1;
+  for(const m of modelMap.values())m.silhouette.visible=m.group.visible&&m.restored.value>.001;
+  renderer.setRenderTarget(p.glowShapes);renderer.render(p.silhouettes,camera);
+  uniforms.glowPass.value=0;
+  p.blur.uniforms.uImage.value=p.glowShapes.texture;
+  p.blur.uniforms.uStep.value.set(CFG.restoredGlowPx/frame.clientWidth,0);
+  renderer.setRenderTarget(p.glowHorizontal);renderer.render(p.post,p.postCamera);
+  p.blur.uniforms.uImage.value=p.glowHorizontal.texture;
+  p.blur.uniforms.uStep.value.set(0,CFG.restoredGlowPx/frame.clientHeight);
+  renderer.setRenderTarget(p.glowSoft);renderer.render(p.post,p.postCamera);
   p.quad.material=p.composite;renderer.setRenderTarget(null);renderer.render(p.post,p.postCamera);
   renderer.shadowMap.autoUpdate=shadows;
 }
@@ -80702,6 +80778,35 @@ function glowTexture(){const c=document.createElement('canvas');c.width=c.height
 let glowMap;
 const trail=[];let trailAt=0;
 function glowSprite(size,opacity=1,color=0xffffff){const m=new T.SpriteMaterial({map:glowMap,color,transparent:true,opacity,depthWrite:false,depthTest:false,blending:T.AdditiveBlending});const s=new T.Sprite(m);s.scale.set(size,size,1);return s;}
+// ART DAWN: one reusable column of light and seeded fireflies over the whole town.
+function createCelebration(){
+  const random=mulberry32(CFG.seed+71),seeds=[],positions=new Float32Array(CFG.victoryParticles*3);
+  for(let i=0;i<CFG.victoryParticles;i++)seeds.push({x:70+random()*(CFG.worldW-140),z:70+random()*(CFG.worldH-140),y:20+random()*180,phase:random()*Math.PI*2});
+  const geometry=new T.BufferGeometry();geometry.setAttribute('position',new T.BufferAttribute(positions,3));
+  const points=new T.Points(geometry,new T.PointsMaterial({map:glowMap,color:0xffe0a0,size:12,transparent:true,opacity:0,depthWrite:false,blending:T.AdditiveBlending}));
+  points.frustumCulled=false;scene.add(points);
+  const beam=new T.Mesh(new T.CylinderGeometry(34,80,700,32,1,true),new T.ShaderMaterial({
+    transparent:true,depthWrite:false,side:T.DoubleSide,blending:T.AdditiveBlending,
+    uniforms:{uAlpha:{value:0}},
+    vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
+    fragmentShader:`varying vec2 vUv;uniform float uAlpha;void main(){float s=sin(vUv.x*31.4159);float rays=.6+.4*s*s;gl_FragColor=vec4(1.,.69,.29,(1.-vUv.y)*rays*uAlpha);}`,
+  }));
+  beam.position.set(560,350,235);scene.add(beam);beam.visible=points.visible=false;
+  return {points,beam,seeds};
+}
+function updateCelebration(now){
+  if(!celebration)return;
+  const p=dawnProgress(now),age=state.status==='won'?Math.max(0,now-state.wonAt-CFG.activationMs)/1000:0;
+  const {points,beam,seeds}=celebration;
+  points.visible=beam.visible=state.status==='won'&&age>0;
+  beam.material.uniforms.uAlpha.value=reduced?.05:(Math.sin(Math.min(1,p)*Math.PI)*.30+.045);
+  points.material.opacity=reduced?.12:Math.min(1,age)*.7;
+  const a=points.geometry.attributes.position;
+  seeds.forEach((s,i)=>{
+    const ready=1-Math.max(0,Math.min(1,(Math.hypot(s.x-560,s.z-235)-(p*2380-180))/140));
+    a.setXYZ(i,s.x+(reduced?0:Math.sin(age*.8+s.phase)*12),reduced?s.y:ready*(s.y+Math.sin(age*.55+s.phase)*28),s.z);
+  });a.needsUpdate=true;
+}
 function mergeGround(group){
   group.updateMatrixWorld(true);const batches=new Map();
   group.traverse(m=>{if(!m.isMesh)return;const geo=m.geometry.clone().applyMatrix4(m.matrixWorld).toNonIndexed();
@@ -80728,11 +80833,24 @@ function buildWorld(){
   box(base,CFG.worldW-60,.8,115,0x223e4e,CFG.worldW/2,.6,790);
   for(let z=430;z<1550;z+=80)box(base,3,.9,29,0x68837f,560,1,z);
   for(const x of [434,686])box(base,3,1,1120,0x829995,x,1,1000);
+  for(const d of DISTRICTS){
+    cyl(base,151,151,.9,d.color,d.x,1.1,d.z,48);
+    const border=new T.Mesh(new T.RingGeometry(141,147,64),mat(0x9e956e));border.rotation.x=-Math.PI/2;border.position.set(d.x,1.8,d.z);base.add(border);
+    for(let i=0;i<12;i++){
+      const a=i*Math.PI/6;cyl(base,6,7,2,0x8da493,d.x+Math.cos(a)*127,2,d.z+Math.sin(a)*127,8);
+    }
+    // Festoon lights sag over each courtyard and become warm as the city wakes.
+    for(let i=0;i<13;i++){
+      const x=d.x-120+i*20,y=69+Math.pow((i-6)/6,2)*22;
+      box(base,21,.7,.7,0x66716a,x,y,d.z-103);
+      mesh(new T.SphereGeometry(3.3,6,5),mat(0xffd690,{emissive:0xffaa47,emissiveIntensity:1}),base,x,y-4,d.z-103);
+    }
+  }
   for(const o of state.objects.filter(o=>['house','shop','villa'].includes(o.type))){box(base,o.bound*2.04,1.5,o.bound*1.66,0x45616a,o.x,1,o.z);}
   // Border lights stay very subtle outside the player's illumination.
   for(let z=100;z<1550;z+=150)for(const x of [36,1084]){cyl(base,4,4,5,0xbcd9d1,x,4,z,8,{emissive:0x87cabe,emissiveIntensity:.55});}
   mergeGround(base);
-  glowMap=glowTexture();
+  glowMap=glowTexture();celebration=createCelebration();
   // Soft shader scattering on the ground: no hard illuminated disc or bright outer rim.
   field=new T.Mesh(new T.CircleGeometry(1.42,96),new T.ShaderMaterial({
     transparent:true,depthWrite:false,blending:T.AdditiveBlending,
@@ -80744,8 +80862,8 @@ function buildWorld(){
         vec2 p=(vUv-.5)*2.84;float r=length(p);
         float angle=atan(p.y,p.x);
         float rays=.82+.10*sin(angle*7.+uTime*.33)+.08*sin(angle*13.-uTime*.21);
-        float core=exp(-r*r*4.2)*.065;
-        float mist=(1.-smoothstep(.28,1.4,r))*.023*rays;
+        float core=exp(-r*r*2.6)*.13;
+        float mist=(1.-smoothstep(.42,1.4,r))*.065*rays;
         gl_FragColor=vec4(uColor,(core+mist)*uFlicker);
       }`,side:T.DoubleSide
   }));
@@ -80776,6 +80894,8 @@ function buildWorld(){
 }
 function resetModels(){
   clearWarmthMap();
+  uniforms.city.value=0;
+  if(celebration)celebration.points.visible=celebration.beam.visible=false;
   for(let i=lightCaptions.length-1;i>=0;i--)removeLightCaption(i);
   feedback.at=feedback.activatedAt=feedback.launchedAt=-10000;feedback.value=0;feedback.object=null;
   $('#receipt').style.opacity=0;$('#object-label').style.opacity=0;
@@ -80792,6 +80912,9 @@ function resize(){
   for(const target of [nightPass.shapes,nightPass.horizontal,nightPass.soft]){
     target.setSize(Math.max(1,Math.round(w*CFG.silhouetteResolution)),Math.max(1,Math.round(h*CFG.silhouetteResolution)));
   }
+  for(const target of [nightPass.glowShapes,nightPass.glowHorizontal,nightPass.glowSoft]){
+    target.setSize(Math.max(1,Math.round(w*CFG.restoredGlowResolution)),Math.max(1,Math.round(h*CFG.restoredGlowResolution)));
+  }
 }
 function disposeEffect(e){
   if(e.spark){scene.remove(e.spark);e.spark.material.dispose();}
@@ -80799,7 +80922,7 @@ function disposeEffect(e){
   for(const ribbon of e.ribbons||[]){scene.remove(ribbon);ribbon.geometry.dispose();ribbon.material.dispose();}
   if(e.seed){scene.remove(e.seed);e.seed.traverse(part=>{if(part.isMesh)part.geometry.dispose();part.material?.dispose();});}
 }
-function ripple(x,z,at,maxRadius=state.radius,strong=false){const m=new T.Mesh(new T.RingGeometry(strong?.978:.985,1,80),new T.MeshBasicMaterial({color:0xffdda1,transparent:true,opacity:.5,side:T.DoubleSide,depthWrite:false,depthTest:!strong}));m.rotation.x=-Math.PI/2;m.position.set(x,3,z);m.renderOrder=strong?5:0;scene.add(m);ripples.push({mesh:m,at,radius:maxRadius,strong});}
+function ripple(x,z,at,maxRadius=state.radius,strong=false,duration=1100){const m=new T.Mesh(new T.RingGeometry(strong?.989:.985,1,80),new T.MeshBasicMaterial({color:0xffdda1,transparent:true,opacity:.5,side:T.DoubleSide,depthWrite:false,depthTest:!strong}));m.rotation.x=-Math.PI/2;m.position.set(x,3,z);m.renderOrder=strong?5:0;scene.add(m);ripples.push({mesh:m,at,radius:maxRadius,strong,duration});}
 function impactHeight(o){return Math.min(100,Math.max(9,o.height*.55));}
 // ART LIGHT SEED: a tiny ivory core in a soft amber halo, never a solid dark ball.
 function makeLightSeed(o){
@@ -80862,6 +80985,11 @@ function activateObject(e,now){
   const at=e.at+CFG.activationMs;
   if(now-at>CFG.activationPulseMs)return;
   ripple(e.o.x,e.o.z,at,Math.max(28,e.o.bound*1.5),true);
+  if(e.o.value>=9&&!reduced)ripple(e.o.x,e.o.z,at+160,Math.max(45,e.o.bound*2.1),false,1350);
+  if(e.o.type==='beacon'){
+    ripple(e.o.x,e.o.z,at,CFG.beaconWarmth,true,1800);
+    showToast(e.o.district,'Фонарь зажжён · квартал становится теплее',2000);
+  }
   if(at-feedback.activatedAt>250||!feedback.object||e.o.value>=feedback.object.value){feedback.object=e.o;feedback.activatedAt=at;}
   queueLightCaption(e.o,at,now);
   if(now-at<200){audio.activate(e.o);try{navigator.vibrate?.(e.o.value>20?18:7);}catch{}}
@@ -80921,15 +81049,25 @@ function consumeEvents(){
 function dawnProgress(now){
   return state.status==='won'?Math.max(0,Math.min(1,(now-state.wonAt-CFG.activationMs)/CFG.victoryMs)):0;
 }
+function cityWarmthAt(now){
+  let energy=0;
+  for(const o of state.objects){
+    if(o.status!=='cleansed')continue;
+    const p=Math.max(0,Math.min(1,(now-o.cleansedAt-CFG.activationMs)/CFG.restorationMs));
+    energy+=(o.value+(o.type==='beacon'?45:0))*p*p*(3-2*p);
+  }
+  return Math.min(1,energy/CFG.cityEnergy);
+}
 function updateVictoryPresentation(now){
   const at=state.wonAt+CFG.activationMs;
   if(state.status!=='won'||victoryPlayed||now<at)return;
   victoryPlayed=true;log('event','dawn.started');
   if(now-at<200)audio.win();
   if(now-at<CFG.victoryMs){
-    showToast('Пусть будет свет','Ты разбудил этот город',CFG.victoryMs-(now-at));
+    showToast('Пусть будет свет','Твоя искра стала рассветом',2200);
     const tower=state.objects.find(o=>o.type==='tower');
-    ripple(tower.x,tower.z,at,1800);
+    ripple(tower.x,tower.z,at,2100,true,CFG.victoryMs);
+    if(!reduced){ripple(tower.x,tower.z,at+260,1700,false,CFG.victoryMs);ripple(tower.x,tower.z,at+520,1300,false,CFG.victoryMs);}
   }
 }
 const tiers=[{r:34,name:'Маленькая искра',next:'деревья'},{r:45,name:'Тёплый огонёк',next:'машины'},{r:59,name:'Живой свет',next:'кафе'},{r:92,name:'Сияние',next:'дома'},{r:114,name:'Большое солнце',next:'особняки'},{r:145,name:'Свет целого города',next:'часовая башня'},{r:213,name:'Пора зажечь рассвет',next:'площадь впереди'}];
@@ -80939,7 +81077,17 @@ function updateUI(now){
   if(now-lastUI<80)return;lastUI=now;const i=tierIndex();if(i>lastStage&&screen==='playing'&&state.status==='playing'){lastStage=i;showToast(tiers[i].name,'Теперь твой свет вмещает больше',1700);audio.level();}
   $('#cleansed').textContent=state.cleansed;$('#growth-name').textContent=tiers[i].name;$('#growth-value').textContent='×'+(state.radius/CFG.startRadius).toFixed(1);
   const progress=Math.min(1,(state.radius-CFG.startRadius)/(ART.tower.bound-CFG.startRadius));$('#growth-fill').style.width=progress*100+'%';$('#progress-text').textContent=Math.round(progress*100)+'%';$('#next-text').textContent=progress<1?'Дальше — '+tiers[i].next:'Башня уже по силам твоему свету';
-  $('#quest-sub').textContent=progress<1?'Очищай квартал на пути к площади':'↑ Башня на северной площади';
+  const lanterns=state.objects.filter(o=>o.type==='beacon'),lit=lanterns.filter(o=>o.status==='cleansed');
+  $('#quest-title').textContent=lit.length<3?'Зажги фонари · '+lit.length+'/3':'Пробуди часовую башню';
+  const target=lanterns.filter(o=>o.status==='dark').sort((a,b)=>Math.hypot(a.x-state.player.x,a.z-state.player.z)-Math.hypot(b.x-state.player.x,b.z-state.player.z))[0]||state.objects.find(o=>o.type==='tower');
+  const angle=Math.atan2(target.x-state.player.x,state.player.z-target.z),arrow=['↑','↗','→','↘','↓','↙','←','↖'][(Math.round(angle/(Math.PI/4))+8)%8];
+  $('#quest-sub').textContent=arrow+' '+(target.district||'Часовая башня')+(target.bound>state.radius?' · вырасти ещё':' · подари свет');
+  if(state.status==='won'){
+    $('#quest-title').textContent='Город просыпается';
+    $('#quest-sub').textContent='Твоя искра стала рассветом';
+  }
+  lanterns.forEach((o,j)=>{const active=o.status==='cleansed';$('#beacon-'+j).classList.toggle('lit',active);$('#beacon-'+j).textContent=(active?'✦ ':'◇ ')+DISTRICTS[j].short;});
+  $('#city-value').textContent='Тепло города · '+Math.round(uniforms.city.value*100)+'%';
   $('#hint').style.opacity=now>9000?'0':'1';if(now>toastUntil)$('#toast').classList.remove('show');
   const receiptAge=now-feedback.at;
   $('#receipt').style.opacity=screen==='playing'&&feedback.value>0&&receiptAge<CFG.receiptHoldMs?Math.min(1,(CFG.receiptHoldMs-receiptAge)/250):0;
@@ -80947,8 +81095,12 @@ function updateUI(now){
   if($('#debug').classList.contains('open'))$('#debug-state').textContent=JSON.stringify({screen,radius:Math.round(state.radius),energy:state.energy,cleansed:state.cleansed,time:(state.now/1000).toFixed(1),drawCalls:renderer.info.render.calls},null,2);
 }
 function updateCamera(now){
-  const follow=reduced?1:1-Math.exp(-Math.max(0,now-cameraAt)/170);cameraAt=now;camX+=(state.player.x-camX)*follow;camZ+=(state.player.z-camZ)*follow;viewRadius+=(state.radius-viewRadius)*follow*.55;
-  const w=CFG.cameraWidth+(viewRadius-CFG.startRadius)*CFG.cameraGrowth,aspect=frame.clientWidth/frame.clientHeight,h=w/aspect;
+  const follow=reduced?1:1-Math.exp(-Math.max(0,now-cameraAt)/170);cameraAt=now;
+  const q=Math.min(1,dawnProgress(now)/.88),pan=reduced?(dawnProgress(now)>=1?1:0):q*q*(3-2*q);
+  camX+=(state.player.x+(560-state.player.x)*pan-camX)*follow;
+  camZ+=(state.player.z+(1050-state.player.z)*pan-camZ)*follow;viewRadius+=(state.radius-viewRadius)*follow*.55;
+  const normal=CFG.cameraWidth+(viewRadius-CFG.startRadius)*CFG.cameraGrowth;
+  const w=normal+(CFG.victoryCameraWidth-normal)*pan,aspect=frame.clientWidth/frame.clientHeight,h=w/aspect;
   camera.left=-w/2;camera.right=w/2;camera.top=h/2;camera.bottom=-h/2;camera.position.set(camX,800,camZ+565);camera.lookAt(camX,0,camZ-75);camera.updateProjectionMatrix();
 }
 function render(now){
@@ -80957,15 +81109,22 @@ function render(now){
   const flicker=reduced?1:1+CFG.lightFlicker*(Math.sin(t*1.9)*.55+Math.sin(t*5.2+.7)*.25+Math.sin(t*8.9)*.2);
   uniforms.time.value=t;uniforms.flicker.value=flicker;uniforms.lightCenter.value.set(state.player.x,state.player.z);
   uniforms.lightRadius.value=state.radius*breath;uniforms.reveal.value=reveal?1:0;
-  const dawn=dawnProgress(now);uniforms.dawn.value=dawn;moon.intensity=CFG.nightMoon+dawn*2.5;ambient.intensity=CFG.nightAmbient+dawn*1.2;scene.background.set(0x02050a).lerp(new T.Color(0x6c979f),dawn*.7);
+  const dawn=dawnProgress(now),city=cityWarmthAt(now);uniforms.dawn.value=dawn;uniforms.city.value=city;
+  moon.intensity=CFG.nightMoon+city*.35+dawn*1.35;moon.color.set(0x789bcc).lerp(new T.Color(0xffdf9d),dawn);
+  ambient.intensity=CFG.nightAmbient+city*.4+dawn*.85;
+  ambient.color.set(0x9fbcd7).lerp(new T.Color(0xffe6b9),Math.max(city*.22,dawn));
+  scene.background.set(0x02050a).lerp(new T.Color(0x193044),city*.45).lerp(new T.Color(0x758b89),dawn*.8);
   light.position.set(state.player.x+Math.sin(t*.73)*CFG.lightSway,CFG.lightHeight+viewRadius*.25, state.player.z+Math.sin(t*.91)*CFG.lightSway);
-  light.distance=state.radius*3;light.intensity=(CFG.nightPointPower+state.radius*.9)*flicker;
+  light.distance=state.radius*3.5;light.intensity=(CFG.nightPointPower+state.radius*1.45)*flicker;
   spirit.position.set(state.player.x,17+(reduced?0:Math.sin(t*2.4)*2.5),state.player.z);spirit.children[0].rotation.y=t*.5;spirit.children[1].rotation.z=t*.24;
   if(now-trailAt>35){for(let i=trail.length-1;i>0;i--)trail[i].position.copy(trail[i-1].position);trail[0].position.copy(spirit.position);trailAt=now;}
   const launchAge=now-feedback.launchedAt;
   const pulse=!reduced&&launchAge>=0&&launchAge<300?Math.sin(launchAge/300*Math.PI):0;
-  spirit.children[0].scale.setScalar(1+(breath-1)*1.5+pulse*.18);
-  halo.material.opacity=.82*flicker+pulse*.12;halo.scale.setScalar(100*breath+pulse*20);
+  const power=1+(state.radius-CFG.startRadius)/125;
+  spirit.children[0].scale.setScalar(power*(1+(breath-1)*1.5+pulse*.18));
+  spirit.children[1].scale.setScalar(Math.sqrt(power));spirit.children[3].scale.setScalar(32*power);
+  halo.material.opacity=.88*flicker+pulse*.12;halo.scale.setScalar((90+state.radius*1.05)*breath+pulse*28);
+  for(let i=0;i<trail.length;i++)trail[i].scale.setScalar((13-i)*Math.sqrt(power));
   field.position.set(state.player.x,1.7,state.player.z);field.scale.setScalar(state.radius*breath);
   fieldEdge.position.set(state.player.x,2,state.player.z);fieldEdge.scale.setScalar(state.radius);fieldEdge.material.opacity=.09+Math.sin(t*2)*.018;
   let label=null,labelText='',labelKind='dark',best=Infinity;
@@ -80980,13 +81139,14 @@ function render(now){
       m.outline.material.uniforms.uOpacity.value=c.full?.95:.23;
       m.outline.material.uniforms.uActivated.value=0;
       if(c.visible&&c.distance<best){best=c.distance;label=o;
-        labelText=c.full?'Наполняем светом · '+Math.round(p*100)+'%':c.possible?'Тьма · освети целиком':'Тьма · нужно больше света';
+        labelText=!c.unlocked?'Зажги три фонаря, чтобы пробудить башню':c.full?'Наполняем светом · '+Math.round(p*100)+'%':c.possible?'Тьма · освети целиком':'Тьма · нужно больше света';
       }
     }
   }
   updateCleansingEffects(now);
   updateVictoryPresentation(now);
-  for(let i=ripples.length-1;i>=0;i--){const r=ripples[i],p=Math.max(0,(now-r.at)/1100);r.mesh.scale.setScalar(Math.max(.01,r.radius*(reduced?.8:.2+.8*p)));r.mesh.material.opacity=(1-p)*(r.strong?.32:.22);if(p>=1){scene.remove(r.mesh);r.mesh.geometry.dispose();r.mesh.material.dispose();ripples.splice(i,1);}}
+  updateCelebration(now);
+  for(let i=ripples.length-1;i>=0;i--){const r=ripples[i],p=Math.max(0,(now-r.at)/r.duration);r.mesh.visible=now>=r.at;r.mesh.scale.setScalar(Math.max(.01,r.radius*(reduced?.8:.12+.88*p)));r.mesh.material.opacity=(1-p)*(r.strong?.45:.24);if(p>=1){scene.remove(r.mesh);r.mesh.geometry.dispose();r.mesh.material.dispose();ripples.splice(i,1);}}
   stars.rotation.y=0;stars.position.y=reduced?0:Math.sin(t*.6)*3;
   for(const m of modelMap.values()){
     m.silhouette.position.copy(m.group.position);m.silhouette.rotation.copy(m.group.rotation);
@@ -80995,7 +81155,7 @@ function render(now){
   }
   updateCamera(now);renderNight();renderLightCaptions(now);
   const el=$('#object-label');
-  if(label&&screen==='playing'&&now-feedback.activatedAt>=CFG.captionDelayMs+CFG.captionMs){
+  if(label&&screen==='playing'&&state.status==='playing'&&now-feedback.activatedAt>=CFG.captionDelayMs+CFG.captionMs){
     const v=new T.Vector3(label.x,label.height+14,label.z).project(camera);
     el.textContent=labelText;el.setAttribute('data-kind',labelKind);
     const edge=el.offsetWidth/2+8;
@@ -81035,13 +81195,18 @@ const audio={ctx:null,gain:null,noiseBuffer:null,init(){if(!this.ctx){try{this.c
   if(this.ctx)this.lastReceive=this.ctx.currentTime;
   log('sound','light.growth',o.value);
   this.note(1046.5,0,.24,'sine',.10);this.note(1568,.03,.3,'sine',.045);
-},level(){[261.63,392,523.25,783.99].forEach((f,i)=>this.note(f,i*.085,.6,'sine',.2));},win(){this.noise(1,.25);log('sound','dawn');[261.63,329.63,392,523.25,659.25,783.99,1046.5].forEach((f,i)=>this.note(f,i*.13,1.6,'sine',.28));},start(){this.init();this.note(196,0,1.1,'sine',.2);this.note(293.66,.15,1.1,'sine',.14);this.note(392,.3,1.1,'sine',.1);}};
+},level(){[261.63,392,523.25,783.99].forEach((f,i)=>this.note(f,i*.085,.6,'sine',.2));},win(){
+  this.noise(1.8,.12);log('sound','dawn');
+  [130.81,196,261.63].forEach(f=>this.note(f,0,4.8,'sine',.19));
+  [523.25,659.25,783.99,1046.5,1174.66,1318.51,1567.98,2093].forEach((f,i)=>this.note(f,.18+i*.19,2.4,'sine',.19));
+  [523.25,659.25,783.99].forEach(f=>this.note(f,2.4,2.8,'sine',.16));
+},start(){this.init();this.note(196,0,1.1,'sine',.2);this.note(293.66,.15,1.1,'sine',.14);this.note(392,.3,1.1,'sine',.1);}};
 function soundIcon(){ $('#sound').innerHTML=saved.mute?'<svg viewBox="0 0 24 24"><path d="M11 4L5 9H2v6h3l6 5V4M16 9l6 6m0-6l-6 6"/></svg>':'<svg viewBox="0 0 24 24"><path d="M11 4L5 9H2v6h3l6 5V4M16 8a6 6 0 010 8m3-11a10 10 0 010 14"/></svg>';$('#sound').setAttribute('aria-label',saved.mute?'Включить звук':'Выключить звук');$('#sound').setAttribute('aria-pressed',String(saved.mute));}
 function clearInput(){input.id=null;input.x=input.z=0;input.keys.clear();input.target=null;$('#joy').style.display='none';}
 function setScreen(next){
   screen=next;log('screen',next);overlay.hidden=next==='playing';$('#hud').classList.toggle('hidden',next==='menu'||next==='win');
   if(next==='pause'){clock.pause();clearInput();overlay.innerHTML='<section class="card dialog"><div class="card-title"><div class="victory-mark">☾</div><h2>Тихая пауза</h2><p>Твой свет никуда не исчезнет.</p></div><div class="menu-bottom"><button class="primary" id="resume">Продолжить</button><button class="secondary" id="restart">Начать заново</button><button class="secondary" id="tuning">Настроить срез</button></div></section>';$('#resume').onclick=()=>{audio.init();clock.resume();lastFrame=clock.now();setScreen('playing');};$('#restart').onclick=startGame;$('#tuning').onclick=()=>$('#debug').classList.add('open');}
-  if(next==='win'){clearInput();const sec=Math.round((state.wonAt||state.now)/1000);overlay.innerHTML='<section class="card dialog"><div class="card-title"><div class="victory-mark">☀</div><div class="eyebrow">Глава 01 завершена</div><h2 style="margin-top:12px">Город проснулся.</h2><p>Всё началось с маленькой искры.</p><div class="results"><div><b>'+state.cleansed+'</b><span>очищено</span></div><div><b>×'+(state.radius/CFG.startRadius).toFixed(1)+'</b><span>больше света</span></div><div><b>'+Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0')+'</b><span>время</span></div></div></div><div class="menu-bottom"><button class="primary" id="again">Ещё один рассвет <span class="arrow">↗</span></button><div class="subnote">Спасибо, что принёс свет</div></div></section>';$('#again').onclick=startGame;}
+  if(next==='win'){clearInput();const sec=Math.round((state.wonAt||state.now)/1000);overlay.innerHTML='<section class="card victory"><div class="card-title"><div class="eyebrow">✦ Три фонаря · один рассвет ✦</div><h2>Ты зажёг целый город.</h2><p>Посмотри, сколько тепла оставила твоя искра.</p><div class="results"><div><b>'+state.cleansed+'</b><span>подарков света</span></div><div><b>×'+(state.radius/CFG.startRadius).toFixed(1)+'</b><span>сильнее сияние</span></div><div><b>'+Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0')+'</b><span>до рассвета</span></div></div></div><div class="menu-bottom"><button class="primary" id="again">Ещё один рассвет <span class="arrow">↗</span></button><div class="subnote">Всё началось с маленькой искры</div></div></section>';$('#again').onclick=startGame;}
 }
 function startGame(){state=createState();eventCursor=0;winShown=false;victoryPlayed=false;lastStage=0;lastUI=-100;toastUntil=0;manualRadius=null;autobot=false;$('#autobot').checked=false;$('#radius').value=34;clock.reset();lastFrame=0;cameraAt=0;trailAt=0;accumulator=0;camX=state.player.x;camZ=state.player.z;viewRadius=state.radius;clearInput();resetModels();setScreen('playing');audio.start();log('event','level.start');}
 const raycaster=new T.Raycaster(),plane=new T.Plane(new T.Vector3(0,1,0),0);
